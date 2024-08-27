@@ -1,0 +1,14 @@
+syntax STLC2 | Λ2
+
+type
+  N    : 0-ary
+  N'   : 0-ary
+  _↣_  : 2-ary | r30
+  _↣'_ : 2-ary | r30
+
+term
+  n    : N
+  app  : α ↣ β  α   ->  β       | _$_ l20
+  lam  : α.β        ->  α ↣ β   | ƛ_  r10
+  app' : α ↣' β  α  ->  β       | _$'_ l21
+  lam' : α.β        ->  α ↣' β  | ƛ'_  r11

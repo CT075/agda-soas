@@ -3,3 +3,4 @@ include: .
   ./agda-categories/src
   ./agda-stdlib/src
   ./out
+  ./staging

@@ -8,6 +8,7 @@ type
   _↣_ : 2-ary | r30
 
 term
+  n   : N
   app : α ↣ β  α  ->  β | _$_ l20
   lam : α.β  ->  α ↣ β | ƛ_ r10
 
@@ -32,12 +33,14 @@ open import SOAS.Syntax.Build ΛT public
 
 -- Operator symbols
 data Λₒ : Set where
+  nₒ : Λₒ
   appₒ lamₒ : {α β : ΛT} → Λₒ
 
 -- Term signature
 Λ:Sig : Signature Λₒ
 Λ:Sig = sig λ
-  { (appₒ {α}{β}) → (⊢₀ α ↣ β) , (⊢₀ α) ⟼₂ β
+  {  nₒ           → ⟼₀ N
+  ; (appₒ {α}{β}) → (⊢₀ α ↣ β) , (⊢₀ α) ⟼₂ β
   ; (lamₒ {α}{β}) → (α ⊢₁ β) ⟼₁ α ↣ β
   }
 
